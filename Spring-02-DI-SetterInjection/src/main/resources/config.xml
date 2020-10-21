@@ -3,11 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="javaCourse" class="com.cybertek.com.cybertek.services.Java">
-        <constructor-arg ref = "officeHours"/>
+    <bean id="javaCourse" class="com.cybertek.services.Java">
+        <property name = "officeHours" ref = "officeHours"/>
     </bean>
-    <bean id="seleniumCourse" class="com.cybertek.com.cybertek.services.Selenium"></bean>
-    <bean id="officeHours" class="com.cybertek.com.cybertek.services.OfficeHours"></bean>
+    <bean id="seleniumCourse" class="com.cybertek.services.Selenium"></bean>
+    <bean id="officeHours" class="com.cybertek.services.OfficeHours"></bean>
 
 </beans>
 
