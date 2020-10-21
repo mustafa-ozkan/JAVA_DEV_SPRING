@@ -1,18 +1,19 @@
 package com.cybertek.services;
 
-import com.cybertek.interfaces.Course;
-import com.cybertek.interfaces.ExtraSessions;
+import com.cybertek.com.cybertek.interfaces.Course;
+import com.cybertek.com.cybertek.interfaces.ExtraSessions;
 
 public class Java implements Course {
-    OfficeHours officeHours = new OfficeHours();
+
+    ExtraSessions extraSessions;
 
     public Java(OfficeHours officeHours) {
-        this.officeHours= officeHours;
+        this.extraSessions= officeHours;
     }
 
     @Override
     public void getTeachingHours() {
-        System.out.println("weekly teaching hours:"+(20+officeHours.getHours()));
+        System.out.println("weekly teaching hours:"+(20+extraSessions.getHours()));
     }
 
 }

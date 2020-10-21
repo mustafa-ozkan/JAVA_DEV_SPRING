@@ -1,7 +1,6 @@
-import implementation.Mentor;
-import services.FullTimeMentor;
-import services.MentorAccount;
-import services.PartTimeMentor;
+import com.cybertek.services.FullTimeMentor;
+import com.cybertek.services.MentorAccount;
+import com.cybertek.services.PartTimeMentor;
 
 public class CybertekApp {
 

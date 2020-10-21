@@ -1,6 +1,6 @@
-package services;
+package com.cybertek.services;
 
-import interfaces.Mentor;
+import com.cybertek.com.cybertek.interfaces.Mentor;
 
 public class PartTimeMentor implements Mentor {
 
