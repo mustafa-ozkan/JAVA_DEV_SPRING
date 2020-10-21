@@ -6,6 +6,9 @@
         <option value="$PROJECT_DIR$/../Spring-01-SpringContainer/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-02-DI-ConstructorInjection/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-02-DI-SetterInjection/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-03-BeanScope-SingletonPrototype/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-01-SpringContainer/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-04-BeanLifeCycle-Init-And-Destroy-Method/pom.xml" />
       </list>
     </option>
   </component>

@@ -4,9 +4,10 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Spring-01-SpringContainer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Spring-03-BeanScope-SingletonPrototype" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
-
