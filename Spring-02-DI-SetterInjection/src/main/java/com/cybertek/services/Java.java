@@ -8,7 +8,7 @@ import lombok.Data;
 
 public class Java implements Course {
 
-    private OfficeHours officeHours;
+    private ExtraSessions extraSessions;
 
 /*
     public OfficeHours getOfficeHours() {
@@ -22,7 +22,7 @@ public class Java implements Course {
 
     @Override
     public void getTeachingHours() {
-        System.out.println("weekly teaching hours:"+(20+officeHours.getHours()));
+        System.out.println("weekly teaching hours:"+(20+extraSessions.getHours()));
     }
 
 }
