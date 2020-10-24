@@ -11,8 +11,11 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-02-DI-SetterInjection/Spring-02-DI-SetterInjection.iml" filepath="$PROJECT_DIR$/Spring-02-DI-SetterInjection/Spring-02-DI-SetterInjection.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-03-BeanScope-SingletonPrototype/Spring-02-DI-SetterInjection (1).iml" filepath="$PROJECT_DIR$/Spring-03-BeanScope-SingletonPrototype/Spring-02-DI-SetterInjection (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-04-BeanLifeCycle-Init-And-Destroy-Method/Spring-04-BeanLifeCycle-Init-And-Destroy-Method.iml" filepath="$PROJECT_DIR$/Spring-04-BeanLifeCycle-Init-And-Destroy-Method/Spring-04-BeanLifeCycle-Init-And-Destroy-Method.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-05-JavaAnnottations-Components/Spring-05-JavaAnnottations-Components.iml" filepath="$PROJECT_DIR$/Spring-05-JavaAnnottations-Components/Spring-05-JavaAnnottations-Components.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-05-JavaAnnottations-AutoWired/Spring-05-JavaAnnottations-Components (1).iml" filepath="$PROJECT_DIR$/Spring-05-JavaAnnottations-AutoWired/Spring-05-JavaAnnottations-Components (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-05-JavaAnnotations-AutoWired/Spring-05-JavaAnnotations-Autowired.iml" filepath="$PROJECT_DIR$/Spring-05-JavaAnnotations-AutoWired/Spring-05-JavaAnnotations-Autowired.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-05-JavaAnnotations-Components/Spring-05-JavaAnnotations-Components.iml" filepath="$PROJECT_DIR$/Spring-05-JavaAnnotations-Components/Spring-05-JavaAnnotations-Components.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-05-JavaAnnotations-Qualifier/Spring-05-JavaAnnotations-Qualifier.iml" filepath="$PROJECT_DIR$/Spring-05-JavaAnnotations-Qualifier/Spring-05-JavaAnnotations-Qualifier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-05-JavaAnnotations-Value/Spring-05-JavaAnnotations-Value.iml" filepath="$PROJECT_DIR$/Spring-05-JavaAnnotations-Value/Spring-05-JavaAnnotations-Value.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-06-JavaCode-Configuration/Spring-06-JavaCode-Configuration.iml" filepath="$PROJECT_DIR$/Spring-06-JavaCode-Configuration/Spring-06-JavaCode-Configuration.iml" />
     </modules>
   </component>
 </project>

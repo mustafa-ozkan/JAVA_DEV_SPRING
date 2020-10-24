@@ -6,14 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Spring-05-JavaAnnotations-Autowired" />
+        <module name="Spring-05-JavaAnnotations-Value" />
         <module name="Spring-01-SpringContainer" />
+        <module name="Spring-05-JavaAnnotations-Components" />
         <module name="Data_Structures-00" />
         <module name="Spring-04-BeanLifeCycle-Init-And-Destroy-Method" />
         <module name="Spring-02-DI-SetterInjection" />
-        <module name="Spring-05-JavaAnnottations-Components" />
-        <module name="Spring-05-JavaAnnottations-Components (1)" />
+        <module name="Spring-06-JavaCode-Configuration" />
         <module name="Spring-02-DI-ConstructorInjection" />
         <module name="Spring-02-DI-SetterInjection (1)" />
+        <module name="Spring-05-JavaAnnotations-Qualifier" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,8 +26,12 @@
       <module name="Spring-02-DI-SetterInjection" target="1.8" />
       <module name="Spring-02-DI-SetterInjection (1)" target="1.8" />
       <module name="Spring-04-BeanLifeCycle-Init-And-Destroy-Method" target="1.8" />
-      <module name="Spring-05-JavaAnnottations-Components" target="1.8" />
-      <module name="Spring-05-JavaAnnottations-Components (1)" target="1.8" />
+      <module name="Spring-05-JavaAnnotations-Autowired" target="1.8" />
+      <module name="Spring-05-JavaAnnotations-AutoWired" target="1.8" />
+      <module name="Spring-05-JavaAnnotations-Components" target="1.8" />
+      <module name="Spring-05-JavaAnnotations-Qualifier" target="1.8" />
+      <module name="Spring-05-JavaAnnotations-Value" target="1.8" />
+      <module name="Spring-06-JavaCode-Configuration" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

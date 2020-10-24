@@ -12,6 +12,11 @@
         <option value="$PROJECT_DIR$/Spring-00-LooselyCoupled/Data_Structures-00/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-05-JavaAnnottations-Components/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-05-JavaAnnottations-AutoWired/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-05-JavaAnnotations-Qualifier/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-05-JavaAnnotations-Components/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-05-JavaAnnotations-AutoWired/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-05-JavaAnnotations-Value/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-05-JavaCode-Configuration/pom.xml" />
       </list>
     </option>
   </component>

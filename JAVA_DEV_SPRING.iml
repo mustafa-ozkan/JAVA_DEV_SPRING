@@ -6,7 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Spring-01-SpringContainer" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Spring-03-BeanScope-SingletonPrototype" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Spring-05-JavaAnnottations-AutoWired" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Spring-05-JavaAnnotations-AutoWired" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Spring-05-JavaAnnotations-Qualifier" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Spring-05-JavaAnnotations-Components" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
