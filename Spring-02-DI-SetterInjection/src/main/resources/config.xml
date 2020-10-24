@@ -6,8 +6,8 @@
     <bean id="javaCourse" class="com.cybertek.services.Java">
         <property name = "extraSessions" ref = "officeHours"/>
     </bean>
-    <bean id="seleniumCourse" class="com.cybertek.services.Selenium"></bean>
-    <bean id="officeHours" class="com.cybertek.services.OfficeHours"></bean>
+    <bean id="seleniumCourse" class="com.cybertek.services.Selenium" scope="prototype"></bean>
+    <bean id="officeHours" class="com.cybertek.services.OfficeHours" scope = "singleton"></bean>
 
 </beans>
 

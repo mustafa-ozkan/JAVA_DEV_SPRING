@@ -1,4 +1,4 @@
-import com.cybertek.interfaces.Mentor;
+import interfaces.Mentor;
 import org.springframework.beans.factory.BeanClassLoaderAware;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
