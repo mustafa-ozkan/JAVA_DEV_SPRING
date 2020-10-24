@@ -11,6 +11,7 @@
         <module name="Spring-04-BeanLifeCycle-Init-And-Destroy-Method" />
         <module name="Spring-02-DI-SetterInjection" />
         <module name="Spring-05-JavaAnnottations-Components" />
+        <module name="Spring-05-JavaAnnottations-Components (1)" />
         <module name="Spring-02-DI-ConstructorInjection" />
         <module name="Spring-02-DI-SetterInjection (1)" />
       </profile>
@@ -23,6 +24,7 @@
       <module name="Spring-02-DI-SetterInjection (1)" target="1.8" />
       <module name="Spring-04-BeanLifeCycle-Init-And-Destroy-Method" target="1.8" />
       <module name="Spring-05-JavaAnnottations-Components" target="1.8" />
+      <module name="Spring-05-JavaAnnottations-Components (1)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
