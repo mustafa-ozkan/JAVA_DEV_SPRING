@@ -1,4 +1,4 @@
-import java.util.Random;
+package assignment_001;
 
 public class Assignments_001 {
     public static void main(String[] args) {

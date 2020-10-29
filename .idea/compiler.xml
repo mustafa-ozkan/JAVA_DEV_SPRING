@@ -2,20 +2,23 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Spring-05-JavaAnnotations-Autowired" />
         <module name="Spring-05-JavaAnnotations-Value" />
+        <module name="Spring-06-JavaCode-Configurations" />
+        <module name="Spring-02-DI-SetterInjection" />
+        <module name="Spring-06-JavaCode-Configuration" />
+        <module name="Spring-02-DI-SetterInjection (1)" />
+        <module name="Spring-06-JavaCode-PostConstruct-PreDestroy" />
         <module name="Spring-01-SpringContainer" />
         <module name="Spring-05-JavaAnnotations-Components" />
         <module name="Data_Structures-00" />
         <module name="Spring-04-BeanLifeCycle-Init-And-Destroy-Method" />
-        <module name="Spring-02-DI-SetterInjection" />
-        <module name="Spring-06-JavaCode-Configuration" />
         <module name="Spring-02-DI-ConstructorInjection" />
-        <module name="Spring-02-DI-SetterInjection (1)" />
         <module name="Spring-05-JavaAnnotations-Qualifier" />
       </profile>
     </annotationProcessing>
@@ -32,6 +35,8 @@
       <module name="Spring-05-JavaAnnotations-Qualifier" target="1.8" />
       <module name="Spring-05-JavaAnnotations-Value" target="1.8" />
       <module name="Spring-06-JavaCode-Configuration" target="1.8" />
+      <module name="Spring-06-JavaCode-Configurations" target="1.8" />
+      <module name="Spring-06-JavaCode-PostConstruct-PreDestroy" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
