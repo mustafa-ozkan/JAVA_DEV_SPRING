@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Assignments-Chapter1/Assignments-Chapter1.iml" filepath="$PROJECT_DIR$/Assignments-Chapter1/Assignments-Chapter1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Data_Structure-00_LinkedList/Data_Structure-00_LinkedList.iml" filepath="$PROJECT_DIR$/Data_Structure-00_LinkedList/Data_Structure-00_LinkedList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Data_Structures-00/Data_Structures-00.iml" filepath="$PROJECT_DIR$/Data_Structures-00/Data_Structures-00.iml" />
       <module fileurl="file://$PROJECT_DIR$/Data_Structures-00/Data_Structures-00-LinkedList.iml" filepath="$PROJECT_DIR$/Data_Structures-00/Data_Structures-00-LinkedList.iml" />
@@ -19,6 +20,8 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-05-JavaAnnotations-Value/Spring-05-JavaAnnotations-Value.iml" filepath="$PROJECT_DIR$/Spring-05-JavaAnnotations-Value/Spring-05-JavaAnnotations-Value.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-06-JavaCode-Configurations/Spring-06-JavaCode-Configuration.iml" filepath="$PROJECT_DIR$/Spring-06-JavaCode-Configurations/Spring-06-JavaCode-Configuration.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-06-JavaCode-PostConstruct-PreDestroy/Spring-06-JavaCode-PostConstruct-PreDestroy.iml" filepath="$PROJECT_DIR$/Spring-06-JavaCode-PostConstruct-PreDestroy/Spring-06-JavaCode-PostConstruct-PreDestroy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-07-SpringBoot-IOC-DI-Lab/Spring-07-SpringBoot-IOC-DI-Lab.iml" filepath="$PROJECT_DIR$/Spring-07-SpringBoot-IOC-DI-Lab/Spring-07-SpringBoot-IOC-DI-Lab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignments-Chapter1/Spring-07-Springboot-Ioc-DI-Lab.iml" filepath="$PROJECT_DIR$/Assignments-Chapter1/Spring-07-Springboot-Ioc-DI-Lab.iml" />
     </modules>
   </component>
 </project>

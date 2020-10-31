@@ -2,9 +2,8 @@ package assignment_002;
 
 public class Assignments_002 {
 
-
     public static void main(String[] args) {
-        int[][] squareArray = createMatrix(31, 31);
+        int[][] squareArray = createMatrix(3, 3);
         printoutAnArray(squareArray);
         squareArray = rotateMatrixInPlace(squareArray);
         printoutAnArray(squareArray);
@@ -34,7 +33,6 @@ public class Assignments_002 {
         }
         return uoi;
     }
-
 
     public static void printoutAnArray(int[][] uoi) {
         System.out.println("Printout Array");
