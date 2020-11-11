@@ -1,17 +1,19 @@
 package assignments;
 
-import java.util.LinkedList;
+import linkedlistexamples.CyLinkedList;
 
 public class Assignment_003 {
     public static void main(String[] args) {
-        LinkedList<String> linkedList = new LinkedList<>();
-        linkedList.add("ali");
-        linkedList.add("veli");
-        linkedList.add("cem");
-        String temp="";
+        var linkedList = new CyLinkedList();
+        linkedList.addLast(1);
+        linkedList.addLast(2);
+        linkedList.addLast(3);
 
-        for (int i = 0; i < linkedList.size(); i++) {
-            linkedList.add(2*linkedList.size()-i,linkedList.get(i));
-        }
+
+     linkedList.printLinkedList();
+        linkedList.reverse();
+        linkedList.printLinkedList();
+
     }
+
 }

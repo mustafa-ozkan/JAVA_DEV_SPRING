@@ -10,8 +10,11 @@
         <module name="Spring-05-JavaAnnotations-Autowired" />
         <module name="Spring-05-JavaAnnotations-Value" />
         <module name="Spring-06-JavaCode-Configurations" />
+        <module name="Spring-07-SpringBoot-Demo" />
+        <module name="cybertek" />
         <module name="Spring-02-DI-SetterInjection" />
         <module name="Spring-06-JavaCode-Configuration" />
+        <module name="Spring-05-JavaAnnottations-Components" />
         <module name="Assignments-Chapter1" />
         <module name="Spring-02-DI-SetterInjection (1)" />
         <module name="Spring-06-JavaCode-PostConstruct-PreDestroy" />
@@ -27,6 +30,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Assignments-Chapter1" target="1.8" />
+      <module name="cybertek" target="1.8" />
       <module name="Data_Structures-00" target="1.5" />
       <module name="Spring-01-SpringContainer" target="1.8" />
       <module name="Spring-02-DI-ConstructorInjection" target="1.8" />
@@ -38,16 +42,20 @@
       <module name="Spring-05-JavaAnnotations-Components" target="1.8" />
       <module name="Spring-05-JavaAnnotations-Qualifier" target="1.8" />
       <module name="Spring-05-JavaAnnotations-Value" target="1.8" />
+      <module name="Spring-05-JavaAnnottations-Components" target="1.8" />
       <module name="Spring-06-JavaCode-Configuration" target="1.8" />
       <module name="Spring-06-JavaCode-Configurations" target="1.8" />
       <module name="Spring-06-JavaCode-PostConstruct-PreDestroy" target="1.8" />
+      <module name="Spring-07-SpringBoot-Demo" target="1.8" />
       <module name="Spring-07-Springboot-Ioc-DI-Lab" target="1.8" />
       <module name="Spring-07-SpringBoot-IOC-DI-Lab" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Spring-07-SpringBoot-Demo" options="-parameters" />
       <module name="Spring-07-SpringBoot-IOC-DI-Lab" options="-parameters" />
+      <module name="cybertek" options="-parameters" />
     </option>
   </component>
 </project>

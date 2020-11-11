@@ -55,12 +55,55 @@ public class CyLinkedList {
         }
         size--;
     }
-    public void printLinkedList(){
-        if(isEmpty()) throw new NoSuchElementException();
-        var current =first;
-        while (current!=null){
-            System.out.println("Value : "+current.value);
-        current =current.next;
+
+    public void printLinkedList() {
+        if (isEmpty()) throw new NoSuchElementException();
+        var current = first;
+        while (current != null) {
+            System.out.println("Value : " + current.value);
+            current = current.next;
         }
     }
+
+    public void reverse() {
+        var previous = first;
+        var current = first.next;
+
+        while (current != null) {
+            var nextNode = current.next;
+            current.next = previous;
+            previous = current;
+            current = nextNode;
+        }
+        last = first;
+        last.next = null;
+        first = previous;
+    }
+
+    public int getKthFromTheEnd(int k) {
+        var a = first;
+        var b = first;
+        for (int i = 0; i < k - 1; i++) {
+            b = b.next;
+        }
+        while (b != last) {
+            a = a.next;
+            b = b.next;
+        }
+        return a.value;
+    }
+
+    public void printMiddle() {
+        var a = first;
+        var b = first;
+        while (b != last && b.next != last) {
+            b = b.next.next;
+            a = a.next;
+        }
+
+        if (b == last)
+            System.out.println(a.value);
+
+    }
 }
+

@@ -3,7 +3,7 @@ package assignment_002;
 public class Assignments_002 {
 
     public static void main(String[] args) {
-        int[][] squareArray = createMatrix(3, 3);
+        int[][] squareArray = createMatrix(10, 10);
         printoutAnArray(squareArray);
         squareArray = rotateMatrixInPlace(squareArray);
         printoutAnArray(squareArray);

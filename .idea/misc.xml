@@ -22,6 +22,8 @@
         <option value="$PROJECT_DIR$/../Spring-06-JavaCode-PostConstruct-PreDestroy/pom.xml" />
         <option value="$PROJECT_DIR$/Assignments-Chapter1/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-07-SpringBoot-IOC-DI-Lab/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-07-SpringBoot-Demo/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Controller/pom.xml" />
       </list>
     </option>
   </component>
