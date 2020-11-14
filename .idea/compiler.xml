@@ -19,9 +19,11 @@
         <module name="Spring-02-DI-SetterInjection (1)" />
         <module name="Spring-06-JavaCode-PostConstruct-PreDestroy" />
         <module name="Spring-07-Springboot-Ioc-DI-Lab" />
+        <module name="Spring-08-SpringBoot-MVC-Model-View(Thymeleaf)" />
         <module name="Spring-01-SpringContainer" />
         <module name="Spring-07-SpringBoot-IOC-DI-Lab" />
         <module name="Spring-05-JavaAnnotations-Components" />
+        <module name="Project-01-Ticketing" />
         <module name="Data_Structures-00" />
         <module name="Spring-04-BeanLifeCycle-Init-And-Destroy-Method" />
         <module name="Spring-02-DI-ConstructorInjection" />
@@ -32,6 +34,7 @@
       <module name="Assignments-Chapter1" target="1.8" />
       <module name="cybertek" target="1.8" />
       <module name="Data_Structures-00" target="1.5" />
+      <module name="Project-01-Ticketing" target="1.8" />
       <module name="Spring-01-SpringContainer" target="1.8" />
       <module name="Spring-02-DI-ConstructorInjection" target="1.8" />
       <module name="Spring-02-DI-SetterInjection" target="1.8" />
@@ -49,12 +52,15 @@
       <module name="Spring-07-SpringBoot-Demo" target="1.8" />
       <module name="Spring-07-Springboot-Ioc-DI-Lab" target="1.8" />
       <module name="Spring-07-SpringBoot-IOC-DI-Lab" target="1.8" />
+      <module name="Spring-08-SpringBoot-MVC-Model-View(Thymeleaf)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Project-01-Ticketing" options="-parameters" />
       <module name="Spring-07-SpringBoot-Demo" options="-parameters" />
       <module name="Spring-07-SpringBoot-IOC-DI-Lab" options="-parameters" />
+      <module name="Spring-08-SpringBoot-MVC-Model-View(Thymeleaf)" options="-parameters" />
       <module name="cybertek" options="-parameters" />
     </option>
   </component>

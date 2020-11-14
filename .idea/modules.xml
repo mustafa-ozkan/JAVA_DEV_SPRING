@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/Data_Structures-00/Data_Structures-00-LinkedList.iml" filepath="$PROJECT_DIR$/Data_Structures-00/Data_Structures-00-LinkedList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Games/Games.iml" filepath="$PROJECT_DIR$/Games/Games.iml" />
       <module fileurl="file://$PROJECT_DIR$/JAVA_DEV_SPRING.iml" filepath="$PROJECT_DIR$/JAVA_DEV_SPRING.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project-01-Ticketing/Project-01-Ticketing.iml" filepath="$PROJECT_DIR$/Project-01-Ticketing/Project-01-Ticketing.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-00-LooselyCoupled/Spring-00-LooselyCoupled.iml" filepath="$PROJECT_DIR$/Spring-00-LooselyCoupled/Spring-00-LooselyCoupled.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-00-TightlyCoupled/Spring-00-TightlyCoupled.iml" filepath="$PROJECT_DIR$/Spring-00-TightlyCoupled/Spring-00-TightlyCoupled.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-01-SpringContainer/Spring-01-SpringContainer.iml" filepath="$PROJECT_DIR$/Spring-01-SpringContainer/Spring-01-SpringContainer.iml" />
@@ -25,6 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-07-SpringBoot-Demo/Spring-07-SpringBoot-Demo.iml" filepath="$PROJECT_DIR$/Spring-07-SpringBoot-Demo/Spring-07-SpringBoot-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-07-SpringBoot-IOC-DI-Lab/Spring-07-SpringBoot-IOC-DI-Lab.iml" filepath="$PROJECT_DIR$/Spring-07-SpringBoot-IOC-DI-Lab/Spring-07-SpringBoot-IOC-DI-Lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/Assignments-Chapter1/Spring-07-Springboot-Ioc-DI-Lab.iml" filepath="$PROJECT_DIR$/Assignments-Chapter1/Spring-07-Springboot-Ioc-DI-Lab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Model-View(Thymeleaf)/Spring-08-SpringBoot-MVC-Model-View(Thymeleaf).iml" filepath="$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Model-View(Thymeleaf)/Spring-08-SpringBoot-MVC-Model-View(Thymeleaf).iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Controller/cybertek.iml" filepath="$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Controller/cybertek.iml" />
     </modules>
   </component>
