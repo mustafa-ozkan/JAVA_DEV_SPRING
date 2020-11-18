@@ -10,6 +10,7 @@
         <module name="Spring-05-JavaAnnotations-Autowired" />
         <module name="Spring-05-JavaAnnotations-Value" />
         <module name="Spring-06-JavaCode-Configurations" />
+        <module name="Spring-08-SpringBoot-MVC-Form" />
         <module name="Spring-07-SpringBoot-Demo" />
         <module name="cybertek" />
         <module name="Spring-02-DI-SetterInjection" />
@@ -52,6 +53,7 @@
       <module name="Spring-07-SpringBoot-Demo" target="1.8" />
       <module name="Spring-07-Springboot-Ioc-DI-Lab" target="1.8" />
       <module name="Spring-07-SpringBoot-IOC-DI-Lab" target="1.8" />
+      <module name="Spring-08-SpringBoot-MVC-Form" target="1.8" />
       <module name="Spring-08-SpringBoot-MVC-Model-View(Thymeleaf)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -60,6 +62,7 @@
       <module name="Project-01-Ticketing" options="-parameters" />
       <module name="Spring-07-SpringBoot-Demo" options="-parameters" />
       <module name="Spring-07-SpringBoot-IOC-DI-Lab" options="-parameters" />
+      <module name="Spring-08-SpringBoot-MVC-Form" options="-parameters" />
       <module name="Spring-08-SpringBoot-MVC-Model-View(Thymeleaf)" options="-parameters" />
       <module name="cybertek" options="-parameters" />
     </option>

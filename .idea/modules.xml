@@ -26,6 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-07-SpringBoot-Demo/Spring-07-SpringBoot-Demo.iml" filepath="$PROJECT_DIR$/Spring-07-SpringBoot-Demo/Spring-07-SpringBoot-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-07-SpringBoot-IOC-DI-Lab/Spring-07-SpringBoot-IOC-DI-Lab.iml" filepath="$PROJECT_DIR$/Spring-07-SpringBoot-IOC-DI-Lab/Spring-07-SpringBoot-IOC-DI-Lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/Assignments-Chapter1/Spring-07-Springboot-Ioc-DI-Lab.iml" filepath="$PROJECT_DIR$/Assignments-Chapter1/Spring-07-Springboot-Ioc-DI-Lab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Form/Spring-08-SpringBoot-MVC-Form.iml" filepath="$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Form/Spring-08-SpringBoot-MVC-Form.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Model-View(Thymeleaf)/Spring-08-SpringBoot-MVC-Model-View(Thymeleaf).iml" filepath="$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Model-View(Thymeleaf)/Spring-08-SpringBoot-MVC-Model-View(Thymeleaf).iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Controller/cybertek.iml" filepath="$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Controller/cybertek.iml" />
     </modules>
