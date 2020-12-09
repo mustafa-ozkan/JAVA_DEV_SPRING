@@ -100,7 +100,7 @@
                         </div>
                         <div class="form-group col-md-2">
                             <label class="text-dark" for="inputZip">Zip</label>
-                            <input type="text" class="form-control" th:field="*{zipCode}" id="inputZip" pattern="[0-9]{5}" required>
+                            <input type="text" class="form-control" th:field="*{zipCode}" id="inputZip" pattern="[0-9]{5}" min="5" max="5" required>
                             <div class="invalid-feedback">Please provide a valid zip code</div>
                         </div>
                     </div>
