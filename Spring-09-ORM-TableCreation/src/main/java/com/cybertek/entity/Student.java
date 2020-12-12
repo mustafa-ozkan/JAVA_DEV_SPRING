@@ -1,5 +1,7 @@
 package com.cybertek.entity;
 
+import com.cybertek.enums.GENDER;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
@@ -34,6 +36,9 @@ public class Student {
     private LocalDate localTime;
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDate localDateTime;
+
+    @Enumerated(EnumType.STRING)
+    private GENDER gender;
 
 
 
