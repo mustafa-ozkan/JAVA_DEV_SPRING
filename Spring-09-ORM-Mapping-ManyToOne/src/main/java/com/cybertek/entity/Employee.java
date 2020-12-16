@@ -1,6 +1,6 @@
-package com.orm2.entity;
+package com.cybertek.entity;
 
-import com.orm2.enums.Gender;
+import com.cybertek.enums.Gender;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,7 +25,7 @@ public class Employee extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST}, fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
     private Department department;
 
