@@ -3,6 +3,7 @@ package com.orm2.bootstrap;
 
 import com.orm2.entity.Department;
 import com.orm2.entity.Employee;
+import com.orm2.entity.Region;
 import com.orm2.enums.Gender;
 import com.orm2.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,6 @@ public class DataGenerator implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         List<Employee> employeeList = new ArrayList<>();
-        List<Department> departmentList = new ArrayList<>();
-
-
 
         Employee e1 = new Employee("Berrie", "Manueau", "bmanueau0@dion.ne.jp", LocalDate.of(2006, 04, 20), Gender.F, 154864);
         Employee e2 = new Employee("Aeriell", "McNee", "amcnee1@google.es", LocalDate.of(2009, 01, 26), Gender.F, 56752);
@@ -47,8 +45,20 @@ public class DataGenerator implements CommandLineRunner {
         e4.setDepartment(d4);
         e5.setDepartment(d5);
 
-        employeeList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
-        departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
+        Region r1 = new Region("Southwest", "United States");
+        Region r2 = new Region("Central", "United States");
+        Region r3 = new Region("Northwest", "United States");
+        Region r4 = new Region("Quebec'", "Canada");
+        Region r5 = new Region("Central", "Asia");
+
+        e1.setRegion(r1);
+        e2.setRegion(r2);
+        e3.setRegion(r3);
+        e4.setRegion(r4);
+        e5.setRegion(r5);
+
+        employeeList.addAll(Arrays.asList(e1, e2, e3, e4, e5));
+
 
         employeeRepository.saveAll(employeeList);
 
