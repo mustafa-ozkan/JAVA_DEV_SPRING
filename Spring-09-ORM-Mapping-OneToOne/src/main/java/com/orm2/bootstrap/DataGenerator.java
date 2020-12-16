@@ -4,8 +4,8 @@ package com.orm2.bootstrap;
 import com.orm2.entity.Department;
 import com.orm2.entity.Employee;
 import com.orm2.enums.Gender;
-import com.orm2.repository.DepartmentRepository;
 import com.orm2.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,13 +17,9 @@ import java.util.List;
 @Component
 public class DataGenerator implements CommandLineRunner {
 
+    @Autowired
     EmployeeRepository employeeRepository;
-    DepartmentRepository departmentRepository;
 
-    public DataGenerator(EmployeeRepository employeeRepository, DepartmentRepository departmentRepository) {
-        this.employeeRepository = employeeRepository;
-        this.departmentRepository = departmentRepository;
-    }
 
     @Override
     public void run(String... args) throws Exception {
@@ -45,11 +41,16 @@ public class DataGenerator implements CommandLineRunner {
         Department d4 = new Department("Phones & Tablets", "Electronics");
         Department d5 = new Department("Computers", "Electronics");
 
+        e1.setDepartment(d1);
+        e2.setDepartment(d2);
+        e3.setDepartment(d3);
+        e4.setDepartment(d4);
+        e5.setDepartment(d5);
+
         employeeList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
         departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
 
         employeeRepository.saveAll(employeeList);
-        departmentRepository.saveAll(departmentList);
 
     }
 }
