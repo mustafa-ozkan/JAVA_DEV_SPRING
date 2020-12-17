@@ -24,6 +24,9 @@ public class Post {
 
 
     @ManyToMany
+    @JoinTable(name = "post_tag_rel",
+            joinColumns = {@JoinColumn(name = "post_id")},
+            inverseJoinColumns = {@JoinColumn(name = "tag_id")})
     private Set<Tag> tags = new HashSet<>();
 
     public Post(String title, String description) {
