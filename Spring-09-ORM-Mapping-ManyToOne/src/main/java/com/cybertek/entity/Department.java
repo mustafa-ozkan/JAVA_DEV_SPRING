@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,9 +15,6 @@ import javax.persistence.Table;
 public class Department extends BaseEntity {
     private String department;
     private String division;
-
-    @ManyToOne
-    private Employee employee;
 
     public Department(String department, String division) {
         this.department = department;
