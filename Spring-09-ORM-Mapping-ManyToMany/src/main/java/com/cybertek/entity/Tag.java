@@ -21,7 +21,7 @@ public class Tag {
 
     private String tagName;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "tags", cascade = CascadeType.ALL)
     private Set<Post> posts = new HashSet<>();
 
 
