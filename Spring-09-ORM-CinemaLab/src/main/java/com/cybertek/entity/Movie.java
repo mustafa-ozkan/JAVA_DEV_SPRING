@@ -6,11 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "movies")
@@ -29,8 +29,20 @@ public class Movie extends BaseEntity {
     @Column(columnDefinition = "text")
     private String summary;
 
-    private BigDecimal price;
+    @Enumerated(EnumType.STRING)
     private MovieType type;
+    @Enumerated(EnumType.STRING)
     private MovieState state;
+
+
+    private BigDecimal price;
+
+
+    @ManyToMany
+    @JoinTable(name = "movie_genre_rel",
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    private List<Genre> genreList = new ArrayList<>();
+
 
 }
