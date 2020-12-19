@@ -32,8 +32,8 @@ public class AccountDetail extends BaseEntity {
     @OneToOne(mappedBy = "accountDetail")
     private UserAccount userAccount;
 
-    public AccountDetail(String name, String address, Integer age,
-                         String country, String city, String state, String postalCode, UserRole role) {
+    public AccountDetail(String name, String address, String country,
+                         String state,String city, Integer age, String postalCode, UserRole role) {
         this.name = name;
         this.address = address;
         this.age = age;

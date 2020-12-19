@@ -31,7 +31,7 @@ public class Ticket extends BaseEntity {
     @JoinColumn(columnDefinition = "user_account_id")
     private UserAccount userAccount;
 
-    public Ticket(LocalDateTime dateTime, Integer seatNumber, Integer rowNumber) {
+    public Ticket(Integer seatNumber, Integer rowNumber,LocalDateTime dateTime) {
         this.dateTime = dateTime;
         this.seatNumber = seatNumber;
         this.rowNumber = rowNumber;

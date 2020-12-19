@@ -19,7 +19,7 @@ public class UserAccount extends  BaseEntity{
     private String password;
     private String username;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "account_details_id")
     private AccountDetail accountDetail;
 
