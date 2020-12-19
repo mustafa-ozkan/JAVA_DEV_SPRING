@@ -10,11 +10,11 @@ import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "cinemas")
+@Table(name = "location")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Location extends BaseEntity{
+public class Location extends BaseEntity {
 
 
     private String name;
@@ -23,8 +23,18 @@ public class Location extends BaseEntity{
     private String country;
     private String city;
     private String state;
-    private String postalCode;
+    private Integer postalCode;
     private String address;
 
-
+    public Location(String name, BigDecimal latitude, BigDecimal longitude, String country,
+                    String city, String state, Integer postalCode, String address) {
+        this.name = name;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.country = country;
+        this.city = city;
+        this.state = state;
+        this.postalCode = postalCode;
+        this.address = address;
+    }
 }
