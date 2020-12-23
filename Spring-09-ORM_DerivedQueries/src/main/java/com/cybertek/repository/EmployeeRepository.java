@@ -28,15 +28,15 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     //display all employees with salaries less  than ""
     List<Employee> findBySalaryLessThanEqual(Integer salary);
 
-    //display max salary
-    Employee findDistinctTop1BySalaryOrderBySalary();
+    //display max salary this doesn't work
+//    Employee findDistinctTop1BySalaryOrderBySalary();
 
     //display all employees that has been hired between "" and ""
     List<Employee> findByHireDateBetween(LocalDate startDate, LocalDate endDate);
 
 
     //display all employees where salaries greater and equal to  "" in order
-    List<Employee> findBySalaryGreaterThanEqualOrderBy(Integer salary);
+    List<Employee> findBySalaryGreaterThanEqualOrderBySalary(Integer salary);
 
     //display  top unique 3 employees that is making less than ""
     List<Employee> findDistinctTop3BySalaryLessThan(Integer salary);
