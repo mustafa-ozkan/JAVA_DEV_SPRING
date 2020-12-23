@@ -27,6 +27,8 @@ public class DerivedqueriesApplication {
 
 		System.out.println("find country names containing by country: "+regionRepository.findAllByCountryContaining("United"));
 
+		System.out.println("find country names containing by country order by region: "+regionRepository.findAllByCountryContainingOrderByRegion("United"));
+
 
 
 
