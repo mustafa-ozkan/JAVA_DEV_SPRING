@@ -19,13 +19,13 @@ public class JpqlApplication {
 
 	@PostConstruct
 	public void testEmployeeNamedQueries(){
+//
+//		System.out.println("---------Employees starts-------------");
+//		System.out.println("select e from Employee e where e.email='dtrail8@tamu.edu' :"+employeeRepository.getEmployeeDetail());
+//
+//		System.out.println("select e.salary from Employee e where e.email='dtrail8@tamu.edu' :"+employeeRepository.getEmployeeSalary());
 
-		System.out.println("---------Employees starts-------------");
-		System.out.println("select e from Employee e where e.email='dtrail8@tamu.edu' :"+employeeRepository.getEmployeeDetail());
-
-		System.out.println("select e.salary from Employee e where e.email='dtrail8@tamu.edu' :"+employeeRepository.getEmployeeSalary());
-
-
+		System.out.println(employeeRepository.retrieveEmployeeSalaryGreaterThan(100000));
 
 	}
 
