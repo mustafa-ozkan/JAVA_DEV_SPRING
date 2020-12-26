@@ -2,6 +2,8 @@ package com.cybertek;
 
 import com.cybertek.repository.AccountDetailRepository;
 import com.cybertek.repository.CinemaRepository;
+import com.cybertek.repository.GenreRepository;
+import com.cybertek.repository.MovieCinemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +16,10 @@ public class CinemaLabApplication {
     AccountDetailRepository accountDetailRepository;
     @Autowired
     CinemaRepository cinemaRepository;
+    @Autowired
+    GenreRepository genreRepository;
+    @Autowired
+    MovieCinemaRepository movieCinemaRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(CinemaLabApplication.class, args);
@@ -31,6 +37,12 @@ public class CinemaLabApplication {
 
     @PostConstruct
     public void testGenreSql(){
+
+    }
+
+    @PostConstruct
+    public void testMovieCineamSql(){
+        movieCinemaRepository.countAllByCinemaId(4L);
 
     }
 
