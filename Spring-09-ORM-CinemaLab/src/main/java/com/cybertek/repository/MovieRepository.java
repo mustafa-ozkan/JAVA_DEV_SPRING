@@ -20,7 +20,7 @@ public interface MovieRepository extends JpaRepository<Movie,Long> {
 
    Optional<Movie> findAllByName(String name);
 //Write a derived query to list all movies between a range of prices
-    List<Movie> findAllByPriceBetween(BigDecimal minPrice, BigDecimal maxPrice)
+    List<Movie> findAllByPriceBetween(BigDecimal minPrice, BigDecimal maxPrice);
 //Write a derived query to list all movies where duration exists in the specific list of duration
     List<Movie> findAllByDurationIn(List<Integer> durations);
 //Write a derived query to list all movies with higher than a specific release date
