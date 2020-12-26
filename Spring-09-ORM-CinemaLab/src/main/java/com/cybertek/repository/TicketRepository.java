@@ -40,10 +40,25 @@ public interface TicketRepository extends JpaRepository<Ticket,Long> {
                                                                LocalDate maxDate );
 
 //Write a native query to distinct all tickets by movie name
+    @Query(value = "select distinct(m.name) from ticket join movie_cinema mc " +
+            "on mc.id =ticket.movie_cinema_id join movie m on mc.movie_id = m.id", nativeQuery = true)
+    List<String>  retrieveAllDistinctMovieNames();
 
 //Write a native query to find all tickets by user email
+    @Query(value = "select * from ticket t join user_account ua on ua.id = t.user_account_id where ua.email=?1", nativeQuery = true)
+    List<Ticket> retrieveAllByUserEmail(String email);
 //Write a native query that returns all tickets
+    @Query(value = "select * from ticket",nativeQuery = true)
+    List<Ticket> retrieveAll();
 //Write a native query to list all tickets where a specific value should be containable in the username or name or movie name
+    @Query(value = "select * from ticket t join user_account ua on ua.id = t.user_account_id " +
+            "join account_details ad on ua.account_details_id = ad.id " +
+            "join movie_cinema mc on t.movie_cinema_id = mc.id " +
+            "join movie m on mc.movie_id = m.id " +
+            "where ua.username ilike concat('%',?1,'%') or " +
+            "ad.name ilike concat('%',?1,'%') or " +
+            "m.name ilike concat('%',?1,'%')", nativeQuery = true)
+    List<Ticket> retrieveAllUsernameOrNameOrMovieNameContains(String pattern);
 
 
 
