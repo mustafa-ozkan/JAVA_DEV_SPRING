@@ -17,7 +17,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()//request should be authorized
-                .anyRequest().authenticated()//incoming request to be authenticated
+                .antMatchers("index.html").permitAll()//everybody can see the page
+                .antMatchers("/profile/**").authenticated()//only authenticated below users can see pages
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/management/**").hasAnyRole("ADMIN","MANAGER")
                 .and()
                 .httpBasic();//perform basic http authentication
     }
@@ -26,13 +29,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
-                .withUser("admin").password(passwordEncoder().encode("admin123")).roles("admin")
+                .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN")
                 .and()
-                .withUser("ozfeka").password(passwordEncoder().encode("oz123")).roles("user");
+                .withUser("ozfeka").password(passwordEncoder().encode("oz123")).roles("USER")
+                .and()
+                .withUser("manager").password(passwordEncoder().encode("Man123")).roles("MANAGER");
     }
 
     @Bean
-    PasswordEncoder passwordEncoder(){
+    PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }
