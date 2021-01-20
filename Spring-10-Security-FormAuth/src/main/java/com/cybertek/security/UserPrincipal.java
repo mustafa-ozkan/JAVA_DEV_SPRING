@@ -24,47 +24,49 @@ public class UserPrincipal implements UserDetails {
         List<GrantedAuthority> authorityList = new ArrayList<>();
 
         //Extract list of permissions
-        user.getPermissionList().forEach(p->{
+        user.getPermissionList().forEach(p -> {
             GrantedAuthority authority = new SimpleGrantedAuthority(p);
             authorityList.add(authority);
         });
 
         //Extract list of roles
-        user.getRoleList().forEach(r->{
-            GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_"+r);
+        user.getRoleList().forEach(r ->{
+            GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" +r);
             authorityList.add(authority);
         });
 
         return authorityList;
+
     }
 
     @Override
     public String getPassword() {
-        return null;
+        return this.user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return this.user.getUsername();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return this.user.getActive()==1;
     }
+
 }

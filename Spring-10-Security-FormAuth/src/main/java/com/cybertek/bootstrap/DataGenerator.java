@@ -22,17 +22,21 @@ public class DataGenerator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        //Delete all
+
+        //Delete All
         this.userRepository.deleteAll();
 
         //Create users
-        User employee = new User("ozzy", passwordEncoder.encode("ozzy123"), "USER","");
-        User admin = new User("admin", passwordEncoder.encode("admin123"),"ADMIN","ACCESS_TEST1,ACCESS_TEST2");
-        User manager = new User("manager", passwordEncoder.encode("manager123"),"MANAGER","ACCESS_TEST1");
+        User employee = new User("ozzy", passwordEncoder.encode("ozzy123"), "USER", "");
+        User admin = new User("admin", passwordEncoder.encode("admin123"), "ADMIN", "ACCESS_TEST1,ACCESS_TEST2");
+        User manager = new User("manager", passwordEncoder.encode("manager123"), "MANAGER", "ACCESS_TEST1");
 
+        List<User> users = Arrays.asList(employee, admin, manager);
 
-        List<User> userList = Arrays.asList(employee, admin, manager);
-        userRepository.saveAll(userList);
+        userRepository.saveAll(users);
+
 
     }
+
+
 }

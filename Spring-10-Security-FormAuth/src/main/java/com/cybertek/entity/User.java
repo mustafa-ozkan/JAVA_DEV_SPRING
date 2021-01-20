@@ -24,9 +24,11 @@ public class User {
     private String permissions;
 
     //id will be created by postgres
+
     public User(String username, String password, String roles, String permissions) {
         this.username = username;
         this.password = password;
+        this.active = 1;
         this.roles = roles;
         this.permissions = permissions;
     }
