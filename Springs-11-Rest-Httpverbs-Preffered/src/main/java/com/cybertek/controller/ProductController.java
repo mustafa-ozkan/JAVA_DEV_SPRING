@@ -18,33 +18,33 @@ public class ProductController {
 
     //using legacy requestmapping and value is my endpoint method shos what we want
     @GetMapping(value = "/{id}")
-    public Product getProduct(@PathVariable("id") Long id){
+    public Product getProduct(@PathVariable("id") Long id) {
 
         return productService.getProduct(id);
     }
 
     @GetMapping()
-    public List<Product> getProducts(){
+    public List<Product> getProducts() {
         return productService.getProducts();
     }
 
     //CREATE PRODUCT
 
     @PostMapping()
-    public List<Product> createProduct(@RequestBody Product product){
+    public List<Product> createProduct(@RequestBody Product product) {
         return productService.createProduct(product);
     }
     //DELETE PRODUCT
 
     @DeleteMapping()
-    public List<Product> deleteProduct(@PathVariable("id") Long id){
+    public List<Product> deleteProduct(@PathVariable("id") Long id) {
         return productService.delete(id);
     }
     //UPDATE PRODUCT -@RequestBody
 
     @PutMapping(value = "/{id}")
-    public List<Product> updateProduct(@PathVariable("id") Long id, @RequestBody Product product){
-        return productService.updateProduct(id,product);
+    public List<Product> updateProduct(@PathVariable("id") Long id, @RequestBody Product product) {
+        return productService.updateProduct(id, product);
     }
 
 }
