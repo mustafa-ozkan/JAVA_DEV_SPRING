@@ -3,6 +3,7 @@ package com.cybertek.controller;
 import com.cybertek.entity.Product;
 import com.cybertek.service.ProductService;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,11 +19,11 @@ public class ProductController {
         this.productService = productService;
     }
 
-    //using legacy requestmapping and value is my endpoint method shos what we want
+    //to not send api empty good practice is to use ResponseEntity
     @GetMapping(value = "/{id}")
-    public Product getProduct(@PathVariable("id") Long id) {
+    public ResponseEntity<Product> getProduct(@PathVariable("id") Long id) {
 
-        return productService.getProduct(id);
+        return ResponseEntity.ok(productService.getProduct(id));
     }
 
     @GetMapping
@@ -42,8 +43,16 @@ public class ProductController {
     //CREATE PRODUCT
 
     @PostMapping
-    public List<Product> createProduct(@RequestBody Product product) {
-        return productService.createProduct(product);
+    public ResponseEntity<List<Product>> createProduct(@RequestBody Product product) {
+
+
+        List<Product> set = productService.createProduct(product);
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .header("Version","Cybertek.V1")
+                .header("Operation","Create Product")
+                .body(set);
     }
     //DELETE PRODUCT
 
