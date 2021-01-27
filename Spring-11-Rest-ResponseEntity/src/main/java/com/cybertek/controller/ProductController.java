@@ -59,8 +59,17 @@ public class ProductController {
     //DELETE PRODUCT
 
     @DeleteMapping(value = "/{id}")
-    public List<Product> deleteProduct(@PathVariable("id") Long id) {
-        return productService.delete(id);
+    public ResponseEntity<List<Product>> deleteProduct(@PathVariable("id") Long id) {
+
+        HttpHeaders responseHttpHeaders = new HttpHeaders();
+
+        responseHttpHeaders.set("Version", "Cybertek.V1");
+        responseHttpHeaders.set("Operation", "Delete");
+
+        List<Product> productList = productService.delete(id);
+
+
+        return new ResponseEntity<>(productList,responseHttpHeaders,HttpStatus.OK);
     }
     //UPDATE PRODUCT -@RequestBody
 
