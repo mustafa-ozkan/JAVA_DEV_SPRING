@@ -1,6 +1,7 @@
 package com.cybertek.controller;
 
 import com.cybertek.entity.Product;
+import com.cybertek.entity.ResponseWrapper;
 import com.cybertek.service.ProductService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -52,8 +53,8 @@ public class ProductController {
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .header("Version","Cybertek.V1")
-                .header("Operation","Create Product")
+                .header("Version", "Cybertek.V1")
+                .header("Operation", "Create Product")
                 .body(set);
     }
     //DELETE PRODUCT
@@ -69,13 +70,13 @@ public class ProductController {
         List<Product> productList = productService.delete(id);
 
 
-        return new ResponseEntity<>(productList,responseHttpHeaders,HttpStatus.OK);
+        return new ResponseEntity<>(productList, responseHttpHeaders, HttpStatus.OK);
     }
     //UPDATE PRODUCT -@RequestBody
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<List<Product>> updateProduct(@PathVariable("id") Long id, @RequestBody Product product) {
-        MultiValueMap<String,String> map = new LinkedMultiValueMap<>();
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("Version", "Cybertek.V1");
         map.add("Operation", "Update");
 
@@ -83,6 +84,17 @@ public class ProductController {
 
 
         return new ResponseEntity<>(productList, map, HttpStatus.OK);
+    }
+
+    @GetMapping("/read")
+    public ResponseEntity<ResponseWrapper> readAllProducts() {
+        return ResponseEntity
+                .ok(new ResponseWrapper("Products succesfully retrieved", productService.getProducts()));
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<ResponseWrapper> delete2Product(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(new ResponseWrapper("Product successfully deleted"));
     }
 
 }
