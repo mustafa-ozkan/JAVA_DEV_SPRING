@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/products")
 public class ProductController {
 
     private ProductService productService;
@@ -16,31 +17,32 @@ public class ProductController {
     }
 
     //using legacy requestmapping and value is my endpoint method shos what we want
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
-    public @ResponseBody Product getProduct(@PathVariable("id") Long id){
+    @GetMapping(value = "/{id}")
+    public Product getProduct(@PathVariable("id") Long id){
+
         return productService.getProduct(id);
     }
 
-    @RequestMapping(value = "/products")
+    @GetMapping()
     public List<Product> getProducts(){
         return productService.getProducts();
     }
 
     //CREATE PRODUCT
 
-    @RequestMapping(value = "/products", method = RequestMethod.POST)
+    @PostMapping()
     public List<Product> createProduct(@RequestBody Product product){
         return productService.createProduct(product);
     }
     //DELETE PRODUCT
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping()
     public List<Product> deleteProduct(@PathVariable("id") Long id){
         return productService.delete(id);
     }
     //UPDATE PRODUCT -@RequestBody
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
+    @PutMapping(value = "/{id}")
     public List<Product> updateProduct(@PathVariable("id") Long id, @RequestBody Product product){
         return productService.updateProduct(id,product);
     }
