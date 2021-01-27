@@ -2,6 +2,8 @@ package com.cybertek.entity;
 
 
 import com.cybertek.enums.UserRole;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +15,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
+
+@JsonIgnoreProperties(value = {"state","postalCode"}, ignoreUnknown = true)
 public class AccountDetail extends BaseEntity {
 
 
@@ -30,6 +34,7 @@ public class AccountDetail extends BaseEntity {
     private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "accountDetail")
+    @JsonBackReference
     private UserAccount userAccount;
 
     public AccountDetail(String name, String address, String country,
