@@ -4,6 +4,8 @@ package com.cybertek.entity;
 import com.cybertek.enums.UserRole;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,7 +18,8 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 
-@JsonIgnoreProperties(value = {"state","postalCode"}, ignoreUnknown = true)
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@JsonIgnoreProperties(value = {"state","postal_code","hibernate_lazy_initializer"}, ignoreUnknown = true)
 public class AccountDetail extends BaseEntity {
 
 
@@ -34,7 +37,8 @@ public class AccountDetail extends BaseEntity {
     private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "accountDetail")
-    @JsonBackReference
+    @JsonBackReference//when we dont want to see user
+    //if we use @Jsonignore we kind of lose the relation awareness
     private UserAccount userAccount;
 
     public AccountDetail(String name, String address, String country,

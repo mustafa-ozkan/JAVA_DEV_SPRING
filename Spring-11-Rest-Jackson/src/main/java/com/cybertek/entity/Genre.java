@@ -20,7 +20,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-@JsonIgnoreProperties(value = {"hibernate_Lazy_Initializer"}, ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"hibernate_lazy_initializer"}, ignoreUnknown = true)
 public class Genre extends BaseEntity {
 
     private String name;

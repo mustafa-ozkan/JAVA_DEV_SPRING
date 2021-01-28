@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-@JsonIgnoreProperties(value = {"hibernate_Lazy_Initializer"}, ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"hibernate_lazy_initializer"}, ignoreUnknown = true)
 public class Cinema extends BaseEntity{
 //primary key will be created from parent class
 

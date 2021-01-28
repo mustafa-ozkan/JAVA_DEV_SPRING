@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-@JsonIgnoreProperties(value = {"hibernate_Lazy_Initializer"}, ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"hibernate_lazy_initializer"}, ignoreUnknown = true)
 public class MovieCinema extends BaseEntity {
 
     //foreign key will be created in moviecinemas table
