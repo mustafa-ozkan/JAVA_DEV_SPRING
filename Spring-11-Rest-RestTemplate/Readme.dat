@@ -1,2 +1,11 @@
 1. we will create the structure for th api
 2. then consume it
+3. we need to create bean to use a library in spring
+4. Basically we can create a config file and use it our runner is a config runner so we will use it
+https://dummyapi.io/data/api/user?limit=10
+
+send
+
+app id header is missing
+
+to get this api we need to se
