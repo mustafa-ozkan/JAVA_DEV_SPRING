@@ -1,6 +1,9 @@
 package com.cybertek.entity;
 
 import com.cybertek.enums.Status;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,15 +12,20 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@NoArgsConstructor
-@Setter
 @Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer"}, ignoreUnknown = true)
+@Table(name = "student")
 public class Student extends BaseEntity {
 
     private LocalDate birthday;
     private String email;
     private String firstName;
     private String lastName;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
     private String phoneNumber;
 
@@ -25,12 +33,12 @@ public class Student extends BaseEntity {
     private Status status;
     private String username;
 
-@OneToOne
-@JoinColumn(name = "address_id")
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id")
     private Address address;
 
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Parent parent;
 }
