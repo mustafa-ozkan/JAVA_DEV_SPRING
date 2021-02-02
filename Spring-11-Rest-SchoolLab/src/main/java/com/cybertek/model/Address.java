@@ -38,7 +38,7 @@ public class Address extends BaseEntity {
 
 //    private Integer getCurrentTemperature(){
 //        return consumeTemp(this.city);
-//    }city
+//    }
 
     public Integer consumeTemp(String city){
 
