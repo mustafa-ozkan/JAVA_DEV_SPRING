@@ -22,7 +22,7 @@ import reactor.core.publisher.Mono;
 @RestController
 public class WebFluxController {
 
-    private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8282").build();
+    private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8282/api").build();
 
     private MovieCinemaRepository movieCinemaRepository;
     private GenreRepository genreRepository;
@@ -33,12 +33,12 @@ public class WebFluxController {
     }
 
     @GetMapping("/flux-movie-cinemas")
-    public Flux<MovieCinema> readAllCinemaFlux(){
+    public Flux<MovieCinema> readAllCinemaFlux() {
         return Flux.fromIterable(movieCinemaRepository.findAll());
     }
 
     @GetMapping("/mono-movie-cinema/{id}")
-    public Mono<MovieCinema> readById(@PathVariable("id") Long id){
+    public Mono<MovieCinema> readById(@PathVariable("id") Long id) {
 
         return Mono.just(movieCinemaRepository.findById(id).get());
 
@@ -47,35 +47,35 @@ public class WebFluxController {
 
 
     @GetMapping("/mono-movie-cinema")
-    public Mono<MovieCinema> readByIdRequestParam(@PathVariable("id") Long id){
+    public Mono<MovieCinema> readByIdRequestParam(@PathVariable("id") Long id) {
         return Mono.just(movieCinemaRepository.findById(id).get());
     }
 
     @PostMapping("create-genre")
-    public Mono<Genre> createGenre(@RequestBody Genre genre){
+    public Mono<Genre> createGenre(@RequestBody Genre genre) {
         Genre createdGenre = genreRepository.save(genre);
         return Mono.just(createdGenre);
     }
 
     @PutMapping("/update-genre")
-    public Mono<Genre> updateGenre(@RequestBody Genre genre){
+    public Mono<Genre> updateGenre(@RequestBody Genre genre) {
         Genre updatedGenre = genreRepository.save(genre);
 
         return Mono.just(updatedGenre);
     }
 
     @DeleteMapping("/delete-genre/{id}")
-    public Mono<Void> deleteGenre(@PathVariable("id") Long id){
+    public Mono<Void> deleteGenre(@PathVariable("id") Long id) {
         genreRepository.deleteById(id);
         return Mono.empty();
     }
 
     /*
-    WEBCLIENT EXAMPLE
+    WEBCLIENT EXAMPLE//Consuming api samples
      */
 
     @GetMapping("/flux")
-    public Flux<MovieCinema> readWithWebClient(){
+    public Flux<MovieCinema> readWithWebClient() {
 
 
         return webClient.get()
@@ -87,18 +87,26 @@ public class WebFluxController {
     }
 
     @GetMapping("/mono/{id}")
-    public Mono<MovieCinema> readMonoWithWebClient(@PathVariable("id") Long id){
+    public Mono<MovieCinema> readMonoWithWebClient(@PathVariable("id") Long id) {
         return webClient.get()
-                .uri("mono-movie-cinema/{id}",id)
+                .uri("mono-movie-cinema/{id}", id)
                 .retrieve()
                 .bodyToMono(MovieCinema.class);
     }
 
+    @GetMapping("/mono-rp")
+    public Mono<MovieCinema> readMonoWithWebClientRequestParam(@RequestParam("id") Long id){
 
+        return webClient
+                .get()
+                .uri(uriBuilder -> uriBuilder
+                .path("/mono-movie-cinema")
+                .queryParam("id",id)
+                .build())
+                .retrieve()
+                .bodyToMono(MovieCinema.class);
 
-
-
-
+    }
 
 
 }
