@@ -21,6 +21,7 @@ import java.time.LocalDate;
 public class Student extends BaseEntity {
 
     private LocalDate birthday;
+
     private String email;
     private String firstName;
     private String lastName;
@@ -33,12 +34,12 @@ public class Student extends BaseEntity {
     private Status status;
     private String username;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)//try lazy fetch
     @JoinColumn(name = "address_id")
     private Address address;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)//many student can have one parent
     @JoinColumn(name = "parent_id")
     private Parent parent;
 }
