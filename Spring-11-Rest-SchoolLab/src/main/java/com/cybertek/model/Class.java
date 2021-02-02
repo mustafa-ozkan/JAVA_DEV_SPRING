@@ -21,12 +21,12 @@ public class Class extends BaseEntity {
     private Integer year;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)//many classes can be assigned to one course
     @JoinColumn(name = "course_id")
     private Course course;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)//many classes can be assigned to one teacher
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
 
