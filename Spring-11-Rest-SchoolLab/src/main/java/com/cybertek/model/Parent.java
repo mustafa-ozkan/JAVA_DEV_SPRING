@@ -37,7 +37,7 @@ public class Parent extends BaseEntity {
     private Status status;
     private String username;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)//error can occur so we might change this
     @JoinColumn(name = "address_id")
     private Address address;
 

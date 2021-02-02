@@ -39,7 +39,7 @@ public class Address extends BaseEntity {
     }
 
     public Integer consumeTemp(String city){
-        return 5;
+        return 5;//will be build after adding api portion
     }
     //---------------------
 

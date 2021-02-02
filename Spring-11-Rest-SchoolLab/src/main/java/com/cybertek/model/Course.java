@@ -21,7 +21,7 @@ import javax.persistence.Table;
 public class Course extends BaseEntity {
 
 
-    @Column(columnDefinition = "text")
+    @Column(columnDefinition = "text")//unlimited text place at db
     private String description;
 
     private String name;
