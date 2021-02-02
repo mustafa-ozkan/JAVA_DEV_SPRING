@@ -4,10 +4,6 @@ import com.cybertek.entity.Genre;
 import com.cybertek.entity.MovieCinema;
 import com.cybertek.repository.GenreRepository;
 import com.cybertek.repository.MovieCinemaRepository;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -15,14 +11,10 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @RestController
 public class WebFluxController {
 
-    private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8282/api").build();
+    private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8282").build();
 
     private MovieCinemaRepository movieCinemaRepository;
     private GenreRepository genreRepository;
@@ -106,6 +98,27 @@ public class WebFluxController {
                 .retrieve()
                 .bodyToMono(MovieCinema.class);
 
+    }
+
+    @PostMapping("/create")
+    public Mono<Genre> createWebClient(@RequestBody Genre genre){
+        return webClient
+                .post()
+                .uri("create-genre")
+                .body(Mono.just(genre),Genre.class)
+                .retrieve()
+                .bodyToMono(Genre.class);
+    }
+
+
+    @DeleteMapping("/delete/{id}")
+    public Mono<Void> deleteWebClient(@PathVariable("id") Long id){
+
+        return webClient
+                .delete()
+                .uri("/delete-genre/{id}",id)
+                .retrieve()
+                .bodyToMono(Void.class);
     }
 
 
