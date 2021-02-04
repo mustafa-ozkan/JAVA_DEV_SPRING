@@ -111,9 +111,17 @@ public class WebFluxController {
     }
 
 
+    /*
+    Error because genre has a relation with moviecinema manytomany
+    fix we create a method at genrerepository to count number of usage
+     */
     @DeleteMapping("/delete/{id}")
-    public Mono<Void> deleteWebClient(@PathVariable("id") Long id){
+    public Mono<Void> deleteWebClient(@PathVariable("id") Long id) throws Exception{
 
+        Integer countGenres  = genreRepository.countGenresNativeQuery(id);
+        if(countGenres>0){
+            throw new Exception("Genre can not be deleted, is linked to a movie");
+        }
         return webClient
                 .delete()
                 .uri("/delete-genre/{id}",id)
