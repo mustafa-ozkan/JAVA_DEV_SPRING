@@ -12,43 +12,42 @@ import java.util.Date;
 @Setter
 public class BaseEntity {
 
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "is_deleted")
     private Boolean isDeleted;
 
     @JsonIgnore
-    @Column(name = "created_date", nullable = false, updatable = false)
-    @Temporal(TemporalType.DATE)
+    @Column(name = "created_date",nullable = false,updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
     @JsonIgnore
-    @Column(name = "updated_date", nullable = false, updatable = false)
-    @Temporal(TemporalType.DATE)
+    @Column(name = "updated_date",nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updatedDate;
 
-
     @JsonIgnore
-    @Column(name = "user_created", updatable = false)
+    @Column(name = "user_created",updatable = false)
     private Integer createUserId;
 
     @JsonIgnore
-    @Column(name = "user_updated", nullable = false)
+    @Column(name = "user_updated",nullable = false)
     private Integer updateUserId;
 
     @PrePersist
     private void onPersist(){
-        this.createdDate = new Date();
-        this.updatedDate = new Date();
-        this.createUserId = 1;
-        this.updateUserId = 1;
+        this.createdDate=new Date();
+        this.updatedDate=new Date();
+        this.createUserId=1;
+        this.updateUserId=1;
     }
 
     @PreUpdate
     private void onPreUpdate(){
-        this.updatedDate = new Date();
-        this.updateUserId = 1;
+        this.updatedDate=new Date();
+        this.updateUserId=1;
     }
-
 }
