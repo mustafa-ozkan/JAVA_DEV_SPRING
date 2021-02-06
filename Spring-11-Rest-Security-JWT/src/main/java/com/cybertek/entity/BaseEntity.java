@@ -15,7 +15,7 @@ public class BaseEntity {
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column("is_deleted")
+    @Column(name = "is_deleted")
     private Boolean isDeleted;
 
     @JsonIgnore
