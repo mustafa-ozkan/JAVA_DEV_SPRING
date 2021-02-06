@@ -47,7 +47,7 @@ public class JWTUtil {
         return claimResolver.apply(claims);
     }
 
-    private String extractUsername(String token){
+    public String extractUsername(String token){
         return extraClaim(token, Claims::getSubject);
     }
 
