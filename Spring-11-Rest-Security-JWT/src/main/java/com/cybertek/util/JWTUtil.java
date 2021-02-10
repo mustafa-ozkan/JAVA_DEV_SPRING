@@ -19,13 +19,14 @@ public class JWTUtil {
     @Value("${security.jwt.secret-key}")
     private String secret;
 
-    public String generateToken(User user, String username){
+    //we have 2 token methods
+    public String generateToken(User user){
 
         Map<String,Object> claims = new HashMap<>();
         claims.put("username", user.getUsername());
         claims.put("email", user.getEmail());
 
-        return createToken(claims,username);
+        return createToken(claims,user.getUsername());
     }
 
     private String createToken(Map<String,Object> claims, String username){

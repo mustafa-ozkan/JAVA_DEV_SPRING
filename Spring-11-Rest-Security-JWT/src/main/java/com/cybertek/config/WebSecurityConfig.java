@@ -10,6 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+
+//we created this class to enable security(it has 4 steps)
+//
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -18,7 +21,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private SecurityFilter securityFilter;
 
 
-
+//we created below bean for doing authentication without a form
+//(by using below bean i will create a method to handle authentication)
+//we were doing this authentication with form login for UI
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -29,9 +34,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception{
 
         http
-                .csrf()
+                .csrf()//in the middle somebody can attack if this is enabled
                 .disable()
                 .authorizeRequests()
+                //to get a token we put below endpoint for everybody(permitall)
                 .antMatchers("/authenticate")
                 .permitAll()
                 .anyRequest()

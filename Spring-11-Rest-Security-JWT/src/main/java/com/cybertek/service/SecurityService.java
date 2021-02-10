@@ -27,7 +27,7 @@ public class SecurityService implements UserDetailsService {
         if (foundUser == null) {
             throw new UsernameNotFoundException("user not found! " + s);
         }
-
+//i get my user from Database and convert it to Spring User Object
         return new org.springframework.security.core.userdetails.User(foundUser.getUsername(), foundUser.getPassword(), listAuthorities(foundUser));
     }
 
