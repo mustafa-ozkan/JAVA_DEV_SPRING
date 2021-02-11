@@ -8,6 +8,8 @@ import com.cybertek.enums.UserState;
 import com.cybertek.exception.ServiceException;
 import com.cybertek.service.UserService;
 import com.cybertek.util.JWTUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Tag(name = "Authenticate controller", description = "Athenticate API")
 public class AuthenticationController {
 
     private UserService userService;
@@ -30,6 +33,7 @@ public class AuthenticationController {
 
     @PostMapping("/authenticate")
     @DefaultExceptionMessage(defaultMessage = "Bad Credentials")
+    @Operation(summary = "Login to application")
     public ResponseEntity<ResponseWrapper> doLogin(@RequestBody AuthenticationRequest authenticationRequest){
 
         String password = authenticationRequest.getPassword();
@@ -52,6 +56,8 @@ public class AuthenticationController {
     }
 
     @PostMapping("/create-user")
+
+    @Operation(summary = "Create a new user")
     public ResponseEntity<ResponseWrapper> createAccount(@RequestBody User user) throws ServiceException {
 
         user.setState(UserState.ACTIVE);
