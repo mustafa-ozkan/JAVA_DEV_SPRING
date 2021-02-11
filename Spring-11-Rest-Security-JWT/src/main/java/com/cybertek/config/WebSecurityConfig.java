@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 //to get a token we put below endpoint for everybody(permitall)
-                .antMatchers("/authenticate")
+                .antMatchers("/authenticate","/create-user")
                 .permitAll()
                 .anyRequest()
                 .authenticated();

@@ -1,8 +1,11 @@
 package com.cybertek.controller;
 
+import com.cybertek.annotation.DefaultExceptionMessage;
 import com.cybertek.entity.AuthenticationRequest;
 import com.cybertek.entity.ResponseWrapper;
 import com.cybertek.entity.User;
+import com.cybertek.enums.UserState;
+import com.cybertek.exception.ServiceException;
 import com.cybertek.service.UserService;
 import com.cybertek.util.JWTUtil;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +29,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/authenticate")
+    @DefaultExceptionMessage(defaultMessage = "Bad Credentials")
     public ResponseEntity<ResponseWrapper> doLogin(@RequestBody AuthenticationRequest authenticationRequest){
 
         String password = authenticationRequest.getPassword();
@@ -45,6 +49,19 @@ public class AuthenticationController {
 
         return ResponseEntity.ok(new ResponseWrapper("Login Successful!",jwtToken));
 
+    }
+
+    @PostMapping("/create-user")
+    public ResponseEntity<ResponseWrapper> createAccount(@RequestBody User user) throws ServiceException {
+
+        user.setState(UserState.ACTIVE);
+        user.setIsDeleted(Boolean.FALSE);
+
+        User createdUser = userService.createUser(user);
+
+
+        return ResponseEntity
+                .ok(new ResponseWrapper("User has been created successfully",createdUser));
     }
 
 }
