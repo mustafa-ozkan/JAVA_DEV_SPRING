@@ -4,10 +4,7 @@ package com.cybertek.aspects;
 import com.cybertek.controller.ProductController;
 import com.cybertek.entity.Product;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -91,4 +88,24 @@ public class LoggingAspect {
     public void afterReturningControllerAdvice2(JoinPoint joinPoint, List<Product> results){
         logger.info("After returning(List Result) -> Method :{} - results :{}", joinPoint.getSignature().toShortString(),results);
     }
+
+    //AfterThrowing
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)")
+    private void anyGetPutProductOperation(){}
+
+    @AfterThrowing(pointcut = "anyGetPutProductOperation()", throwing = "exception")
+    public void afterThrowingControllerAdvice(JoinPoint joinPoint, RuntimeException exception){
+        logger.info("After throwing(send email to L2 team) -> Method :{} - Exception :{}", joinPoint.getSignature().toShortString(),exception.getMessage());
+    }
+
+    //After(finally)
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)")
+    private void anyGetPutProductOperation2(){}
+
+    @After("anyGetPutProductOperation2()")
+    public void afterControllerAdvice(JoinPoint joinPoint){
+        logger.info("After finally -> Method :{} - Results :{}", joinPoint.getSignature().toShortString());
+    }
+
 }
+
