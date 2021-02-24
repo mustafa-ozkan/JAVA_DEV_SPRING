@@ -30,6 +30,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
+    private static final String[] permittedUrls = {
+            "/authenticate",
+            "/create-user",
+            "/api/p1/**",
+            "/v3/api-docs/**",
+            "/swagger-resources/**",
+            "/configuration/security",
+            "/swagger-ui.html",
+            "/swagger-ui/**",
+            "/webjars/**"
+    };
+
     @Override
     protected void configure(HttpSecurity http) throws Exception{
 
@@ -38,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 //to get a token we put below endpoint for everybody(permitall)
-                .antMatchers("/authenticate","/create-user")
+                .antMatchers(permittedUrls)
                 .permitAll()
                 .anyRequest()
                 .authenticated();

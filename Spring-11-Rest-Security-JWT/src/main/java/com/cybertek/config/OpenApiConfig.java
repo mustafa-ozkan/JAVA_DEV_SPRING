@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class OpenApiConfig {
 
     @Bean
-    public OpenAPI customOpenApi() {
+    public OpenAPI customOpenApi(){
 
         SecurityScheme securitySchemeItem = new SecurityScheme();
         securitySchemeItem.setType(SecurityScheme.Type.HTTP);
@@ -22,15 +22,13 @@ public class OpenApiConfig {
         securitySchemeItem.setIn(SecurityScheme.In.HEADER);
         securitySchemeItem.setName("Authorization");
         io.swagger.v3.oas.models.info.Info infoVersion = new io.swagger.v3.oas.models.info.Info().title("Cybertek API").version("snapshot");
-        SecurityRequirement secuirtyItem = new SecurityRequirement().addList("bearer-jwt", Arrays.asList("read", "write"));
+        SecurityRequirement securityItem = new SecurityRequirement().addList("bearer-jwt", Arrays.asList("read","write"));
 
         return new OpenAPI()
                 .components(new Components()
-                        .addSecuritySchemes("bearer-jwt", securitySchemeItem))
+                        .addSecuritySchemes("bearer-jwt",securitySchemeItem))
                 .info(infoVersion)
-                .addSecurityItem(secuirtyItem);
+                .addSecurityItem(securityItem);
     }
-
-
 
 }
