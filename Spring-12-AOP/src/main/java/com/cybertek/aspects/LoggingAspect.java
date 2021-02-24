@@ -60,6 +60,15 @@ public class LoggingAspect {
         logger.info("Before -> Controller:{} - method:{} - Input Parameter :{}",joinPoint, joinPoint.getArgs(),joinPoint.getTarget());
     }
 
+    //annotation
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.DeleteMapping)")
+    private void anyDeleteProductOperation(){ }
+
+    @Before("anyDeleteProductOperation()")
+    public void beforeControllerAdvice3(JoinPoint joinPoint){
+        logger.info("Before -> Controller:{} - method:{} - Input Parameter :{}",joinPoint, joinPoint.getArgs(),joinPoint.getTarget());
+    }
+
 
 
 
