@@ -4,11 +4,13 @@ package com.cybertek.aspects;
 import com.cybertek.controller.ProductController;
 import com.cybertek.entity.Product;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Aspect
@@ -105,6 +107,19 @@ public class LoggingAspect {
     @After("anyGetPutProductOperation2()")
     public void afterControllerAdvice(JoinPoint joinPoint){
         logger.info("After finally -> Method :{} - Results :{}", joinPoint.getSignature().toShortString());
+    }
+
+    //Around
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.PostMapping)")
+    private void anyPostProductOperation(){}
+
+    @Around("anyPostProductOperation()")
+    public Object anyPostControllerAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        logger.info("Before(Method : {} - Parameters : {}",proceedingJoinPoint.getSignature().toShortString(),proceedingJoinPoint.getArgs());
+        List<Product> results = new ArrayList<>();
+        results =(List<Product>) proceedingJoinPoint.proceed();
+        logger.info("After(Method: {} - Results : {}",proceedingJoinPoint.getSignature().toShortString(),results);
+        return results;
     }
 
 }
