@@ -1,0 +1,1 @@
+[INFO ] 2021-02-24 21:10:23.711 [http-nio-9090-exec-10] PerformanceAspect - Time taken to execute : 435 ms (Method : LoginController.doLogin(..) - Parameters : ResponseEntity com.cybertek.controller.LoginController.doLogin(AuthenticationRequest)
